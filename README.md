@@ -39,3 +39,5 @@ $ npm run start:dev
 # production mode
 $ npm run start:prod
 ```
+
+11. Visit [http://localhost:3000/](localhost:3000) to view the login page.
