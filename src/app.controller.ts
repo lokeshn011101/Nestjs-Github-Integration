@@ -16,11 +16,7 @@ import { Request } from 'express';
 import { AppService } from './app.service';
 import axios, { AxiosResponse } from 'axios';
 import { Octokit } from 'octokit';
-
-const keys: Record<string, string> = {
-  CLIENT_ID: '3b228d8790374927ad16',
-  CLIENT_SECRET: '5f806038099aa4a2f1530527a81479f5f83265ec',
-};
+import * as keys from './keys.json';
 
 @Controller()
 export class AppController {
