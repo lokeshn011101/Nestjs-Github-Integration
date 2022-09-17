@@ -14,9 +14,7 @@ import { ConfigModule } from '@nestjs/config';
       synchronize: true,
     }),
     TypeOrmModule.forFeature([User]),
-    ConfigModule.forRoot({
-      envFilePath: '.development.env',
-    }),
+    ConfigModule.forRoot(),
   ],
   controllers: [AppController],
   providers: [AppService],
