@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './users/user.entity';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
@@ -13,6 +14,9 @@ import { User } from './users/user.entity';
       synchronize: true,
     }),
     TypeOrmModule.forFeature([User]),
+    ConfigModule.forRoot({
+      envFilePath: '.development.env',
+    }),
   ],
   controllers: [AppController],
   providers: [AppService],

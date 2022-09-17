@@ -36,3 +36,5 @@ lerna-debug.log*
 
 userDB
 src/keys.json
+
+.development.env

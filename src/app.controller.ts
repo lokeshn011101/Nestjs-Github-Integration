@@ -16,7 +16,6 @@ import { Request } from 'express';
 import { AppService } from './app.service';
 import axios, { AxiosResponse } from 'axios';
 import { Octokit } from 'octokit';
-import * as keys from './keys.json';
 
 @Controller()
 export class AppController {
@@ -37,7 +36,7 @@ export class AppController {
    */
   @Get('login')
   @Redirect(
-    `https://github.com/login/oauth/authorize?scope=public_repo,user,delete_repo&client_id=${keys.CLIENT_ID}`,
+    `https://github.com/login/oauth/authorize?scope=public_repo,user,delete_repo&client_id=${process.env.CLIENT_ID}`,
     301,
   )
   login(): any {
@@ -53,8 +52,8 @@ export class AppController {
     const response: AxiosResponse = await axios.post(
       'https://github.com/login/oauth/access_token',
       {
-        client_id: keys.CLIENT_ID,
-        client_secret: keys.CLIENT_SECRET,
+        client_id: process.env.CLIENT_ID,
+        client_secret: process.env.CLIENT_SECRET,
         code,
       },
     );
