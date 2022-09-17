@@ -24,10 +24,10 @@ $ npm install
 5. Enter `http://localhost:3000/` in the Homepage URL.
 6. Enter `http://localhost:3000/callback` in the Authorization callback URL.
 7. Click Register application.
-8. After cloning this project locally, create a file `keys.json` in the root directory.
-9. Add
-   `{ "CLIENT_ID": <client id of the created oauth app>, "CLIENT_SECRET": <client secret of the created oauth app> }`
-10. For running the application:
+8. After cloning this project locally, in the file `.env`, add
+  1. CLIENT_ID - client id of the created oauth app
+  2. CLIENT_SECRET - client secret of the created oauth app
+9. For running the application:
 
 ```bash
 # development
@@ -40,4 +40,4 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-11. Visit [http://localhost:3000/](localhost:3000) to view the login page.
+10. Visit [http://localhost:3000/](localhost:3000) to view the login page.
